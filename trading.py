@@ -5,4 +5,7 @@ import matplotlib.pyplot as plt
 ts = TimeSeries(key='BMOZOE9D5X9ECSP9', output_format='pandas')
 data, meta_data = ts.get_daily(symbol='TSLA')
 
-print(data.head())
+# plot data
+data['4. close'].plot()
+plt.title('Close price for TSLA')
+plt.show()
