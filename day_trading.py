@@ -10,9 +10,7 @@ ts = TimeSeries(key='BMOZOE9D5X9ECSP9', output_format='pandas')
 ticker = input("Ticker: ")
 
 try:
-    data, meta_data = ts.get_daily(symbol=ticker)
-
-    print(data.info())
+    data, meta_data = ts.get_intraday(symbol=ticker, interval='15min', outputsize='compact')
 
     # moving date to column
     data['date'] = data.index
@@ -56,7 +54,7 @@ try:
     fig, ax = plt.subplots()
 
     candlestick_ohlc(ax, ohlc.values, width=0.6,
-                    colorup='green', colordown='red', alpha=0.8)
+                     colorup='green', colordown='red', alpha=0.8)
 
     # setting labels and titles
     ax.set_xlabel('Date')
@@ -84,10 +82,8 @@ try:
 
     plt.legend()
     plt.show()
+
 except:
     print("Something went wrong")
-
-
-
 
 
