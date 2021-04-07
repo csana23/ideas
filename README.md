@@ -1,3 +1,2 @@
-## java_practice
 
-A bit of practice ;)
+A bit of practice
